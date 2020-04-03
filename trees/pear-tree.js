@@ -9,7 +9,7 @@ class PearTree extends FruitTree{ //name, age, height, matureAge, healthStatus
         super.grow()
     }
   
-    produceMangoes () {
+    producePears () {
       super.produceFruits()
     }
   

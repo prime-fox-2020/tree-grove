@@ -9,7 +9,7 @@ class AppleTree extends FruitTree{ //name, age, height, matureAge, healthStatus
         super.grow()
     }
   
-    produceMangoes () {
+    produceApples () {
       super.produceFruits()
     }
   
