@@ -67,9 +67,6 @@ grove.inputTree("MangoTree", 15, 2.4, 12 ,true)
 grove.inputTree("AppleTree", 14, 1.2, 5, true)
 grove.inputTree("PearTree", 17, 2, 15, true)
 
-// grove.inputTree("PearTree", 9, 12, 7, true)
-
-
 // // next year
 grove.nextYear()
 

@@ -1,21 +1,19 @@
 "use strict"
 
 class FruitTree {
-  constructor (age, height, matureAge, healthStatus, maxAge, maxGrow){
+  constructor (age, height, matureAge, healthStatus){
     this._age = age
     this._height = height
     this._matureAge = matureAge
     this._healthStatus = healthStatus
-    this._maxAge = maxAge
-    this._maxGrow = maxGrow
+
   }
 
   get age () {return this._age}
   get height () {return this._height}
   get matureAge () {return this._matureAge}
   get healthStatus () {return this._healthStatus}
-  get maxAge () {return this._maxAge}
-  get maxGrow () {return this._maxGrow}
+
 
   grow () {
     if (this._age < 20){
@@ -30,8 +28,8 @@ class FruitTree {
 }
 
 class PearTree extends FruitTree{
-  constructor(name, age, height, matureAge, healthStatus, maxAge = 10, maxGrow = 7) {
-      super(age, height, matureAge, healthStatus, maxAge, maxGrow)
+  constructor(name, age, height, matureAge, healthStatus,) {
+      super(age, height, matureAge, healthStatus)
       this.name = name
   }
 }
