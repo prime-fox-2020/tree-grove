@@ -19,15 +19,4 @@ class AppleTree extends FruitTree{
     }
 }
 
-let appleTree = new AppleTree()
-
-// do {
-//     appleTree.grow();
-//     appleTree.produceApples();
-//     appleTree.harvest();
-//     console.log(`[Year ${appleTree.age} Report] Height = ${appleTree.height.toFixed(1)}m | Fruits harvested = ${appleTree.harvested} `)
-// } while (appleTree.healthStatus != false)
-// console.log('The Apple tree has met its end.')
-// console.log('\n ===========================================\n')
-
 module.exports = AppleTree

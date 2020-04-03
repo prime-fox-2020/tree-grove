@@ -27,8 +27,6 @@ class TreeGrove {
             this.tree[i].grow()
             console.log(`${this.tree[i].name} || Age : ${this.tree[i].age} || Health : ${this.tree[i].healthStatus}`)
         }
-        
-        // console.log(`Age : ${mango.age} Height: ${mango.height.toFixed(1)} || Health Status : ${mango.healthStatus}`)
     }
 
     showAges() {

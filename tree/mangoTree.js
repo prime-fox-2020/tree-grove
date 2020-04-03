@@ -2,7 +2,7 @@ const FruitTree = require('./fruitTree.js')
 const Manggo = require('../fruit/manggo.js')
 
 class ManggoTree extends FruitTree{
-    constructor(name, age, height, matureAge, healthStatus,fruits, harvested, maxAge = 20, maxGrow = 10) {
+    constructor(name, age, height, matureAge, healthStatus,fruits, harvested, maxAge = 12, maxGrow = 8) {
         super(age, height, matureAge, healthStatus, fruits, harvested, maxAge, maxGrow)
         this.name = name
     }
@@ -18,16 +18,4 @@ class ManggoTree extends FruitTree{
         }
     }
 }
-
-let mangoTree = new ManggoTree()
-
-// do {
-//     mangoTree.grow();
-//     mangoTree.produceMangoes();
-//     mangoTree.harvest();
-//     console.log(`[Year ${mangoTree.age} Report] Height = ${mangoTree.height.toFixed(1)}m | Fruits harvested = ${mangoTree.harvested} `)
-// } while (mangoTree.healthStatus != false)
-// console.log('The Mango tree has met its end.')
-// console.log('\n ===========================================\n')
-
 module.exports = ManggoTree
