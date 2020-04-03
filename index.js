@@ -1,8 +1,4 @@
-const MangoTree = require('./mango_tree.js');
-const AppleTree = require('./apple_tree.js');
-const PearTree = require('./pear_tree.js');
-
-class TreeGrove {}
+const TreeGrove = require('./groves/tree-grove.js');
 
 var grove = new TreeGrove()
 // input your trees data !
@@ -16,17 +12,34 @@ grove.inputTree("MangoTree", 5, 2.4, 12 ,true)
 grove.inputTree("AppleTree", 4, 1.2, 5, true)
 grove.inputTree("PearTree", 7, 2, 15, true)
 
+
 // next year
-grove.nextYear()
+let yearPassed = Math.round(Math.random() * 50 + 1);
+for (let i = 1; i <= yearPassed; i++) {
+  grove.nextYear();
 
-// show trees ages
-grove.showAges()
+  console.log(`\n\n=================================== SUMMARY =================================== `);
+  console.log(`YEAR PASSED: `, i);
 
-// show trees
-grove.showTrees()
+  // show trees
+  grove.showTrees();
 
-// show trees
-grove.showMatureTrees()
+  console.log(`\n`);
 
-// show trees
-grove.showDeadTrees()
+  // show trees ages
+  grove.showAges();
+
+  console.log(`\n`);
+
+  // show trees
+  grove.showMatureTrees();
+
+  console.log(`\n`);
+
+  // show trees
+  grove.showDeadTrees(i);
+
+  console.log(`============================== ISMAIL ASH SHIDIQ ==============================\n\n`);
+  if (i < yearPassed) console.log(`================= NEXT YEAR =================`);
+  if (i === yearPassed) console.log(`===================== END =====================\n\n`);
+}
