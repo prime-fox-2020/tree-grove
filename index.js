@@ -61,7 +61,11 @@ grove.inputTree("MangoTree", 15, 50, 12 ,true)
 grove.inputTree("AppleTree", 14, 30, 5, true)
 grove.inputTree("PearTree", 17, 60, 15, true)
 
-// next year
+// next 
+
+//Pohon akan dianggap mati ketika usia pohon >= 10 tahun dari mature age
+
+console.log(`\n\n -------------------- Year 1 --------------------\n`)
 grove.nextYear()
 
 // // show trees ages
@@ -78,4 +82,29 @@ grove.showMatureTrees()
 
 // // show trees
 console.log('----------------- Dead Trees -----------------')
+grove.showDeadTrees()
+
+
+/* checking test case year 2 with planting some new trees*/
+// grove.inputTree("MangoTree", 8, 32, 10, true)
+// grove.inputTree("AppleTree", 10, 37.7, 15, true)
+// grove.inputTree("PearTree", 5, 25, 12, true)
+
+// console.log(`\n\n -------------------- Year 2 --------------------\n`)
+// grove.nextYear()
+
+// // // show trees ages
+// console.log('----------------- Welcome to Tree Grove -----------------')
+// grove.showAges()
+
+// // // show trees
+// console.log('----------------- All Trees -----------------')
+// grove.showTrees()
+
+// // // show trees
+// console.log('----------------- Mature Trees -----------------')
+// grove.showMatureTrees()
+
+// // // show trees
+// console.log('----------------- Dead Trees -----------------')
 grove.showDeadTrees()
