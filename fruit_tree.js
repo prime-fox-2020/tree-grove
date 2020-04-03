@@ -1,7 +1,7 @@
 let Fruit = require("./fruit");
 
 class FruitTree {
-  constructor(name, age, height, matureAge, healthStatus, mature, averageFruits, growth, die) {
+  constructor(name, age, height, matureAge, healthStatus, limitYear){
     this._name = name;
     this._age = age || 0;
     this._height = height || 0;
@@ -10,15 +10,15 @@ class FruitTree {
 
     // ADDITIONAL
     this._fruits = 0;
-    this._mature = mature || false;
+    this._mature = false;
     this.quality = {
       good: 0,
       bad: 0
     };
 
-    this._averageFruits = averageFruits || 30;
-    this._growth = growth || 12;
-    this._die = die || 30;
+    this._averageFruits = 30;
+    this._growth = 12;
+    this._die = limitYear
   }
 
   get age() {

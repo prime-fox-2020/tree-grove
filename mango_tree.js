@@ -1,11 +1,11 @@
 const FruitTree = require("./fruit_tree");
 let Fruit = require("./fruit");
-// const Mango = require("./mango");
 
 class MangoTree extends FruitTree {
-  constructor(name,age,height,matureAge,healthStatus) {
-    super(name,age,height,matureAge,healthStatus);
-  }
+  constructor(name,age,height,healthStatus,matureAge,limitYear) {
+    super(name,age,height,healthStatus,matureAge,limitYear)
+}
+
   produceMangoes() {
     super.produceFruits();
   }
