@@ -1,8 +1,79 @@
-const MangoTree = require('./mango_tree.js');
-const AppleTree = require('./apple_tree.js');
-const PearTree = require('./pear_tree.js');
+const MangoTree = require('./mango/mangoTree.js');
+const AppleTree = require('./apple/appleTree.js');
+const PearTree = require('./pear/pearTree.js');
 
-class TreeGrove {}
+class TreeGrove {
+  constructor(){
+    this._grove = [];
+  }
+
+  get grove(){
+    return this._grove;
+  }
+
+  set grove(val){
+    this._grove = val;
+  }
+
+  //method
+  inputTree(treeName, treeAge, treeHeight, matureAge, healthStatus){
+    if(treeName === "MangoTree"){
+      const mango = new MangoTree(treeAge, treeHeight, matureAge, healthStatus);
+      // mango.grow();
+      mango.produceMangos();
+      this.grove.push(mango);
+    }
+    if(treeName === "AppleTree"){
+      const apple = new AppleTree(treeAge, treeHeight, matureAge, healthStatus);
+      // apple.grow();
+      apple.produceApples();
+      this.grove.push(apple);
+    }
+    if(treeName === "PearTree"){
+      const pear = new PearTree(treeAge, treeHeight, matureAge, healthStatus);
+      // pear.grow();
+      pear.producePears();
+      this.grove.push(pear);
+    }
+  }
+
+  nextYear(){
+    for(let tree of this.grove){
+      tree.grow();
+    }
+  }
+
+  showAges(){
+    for(let tree of this.grove){
+      console.log(`${tree.constructor.name} | age: ${tree.age} years`);
+    }
+  }
+
+  showTrees(){
+    console.log(`----------------- All Trees -----------------`);
+    for(let tree of this.grove){
+      console.log(`${tree.constructor.name} | height: ${tree.height}  | age: ${tree.age} | mature age: ${tree.matureAge}  | health status: ${tree.healthStatus}`)
+    }
+  }
+
+  showMatureTrees(){
+    console.log(`----------------- Mature Trees -----------------`);
+    for(let tree of this.grove){
+      if(tree.mature){
+        console.log(`${tree.constructor.name} | height: ${tree.height}  | age: ${tree.age} | mature age: ${tree.matureAge}  | health status: ${tree.healthStatus}`);
+      }
+    }
+  }
+
+  showDeadTrees(){
+    console.log(`----------------- Dead Trees -----------------`);
+    for(let tree of this.grove){
+      if(!tree.healthStatus){
+        console.log(`${tree.constructor.name} | height: ${tree.height}  | age: ${tree.age} | mature age: ${tree.matureAge}  | health status: ${tree.healthStatus}`);
+      }
+    }
+  }
+}
 
 var grove = new TreeGrove()
 // input your trees data !
