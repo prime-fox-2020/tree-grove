@@ -90,7 +90,6 @@ grove.inputTree("MangoTree", 5, 2.4, 12 ,true,16)
 grove.inputTree("AppleTree", 4, 1.2, 5, true,15)
 grove.inputTree("PearTree", 7, 2, 15, true,18)
 
-
 // show trees ages
 grove.showAges()
 
