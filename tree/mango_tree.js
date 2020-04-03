@@ -1,10 +1,8 @@
-const FruitTree = require('./fruit_treejs')
-const Mango = require('../fruits/mango.js')
-
-class MangoTree extends FruitTree{
-    constructor (name, age, height, fruits, healthStatus, harvested , limitHeight) {
-      super(new Mango, age, height, fruits, healthStatus, harvested , limitHeight)
-    }
+const FruitTree = require('./fruit_tree')
+class MangoTree extends FruitTree {
+  constructor(age, height, matureAge, healtyStatus) {
+      super('Mango Tree', age, height, matureAge, healtyStatus )
+  }
 }
 
 module.exports = MangoTree

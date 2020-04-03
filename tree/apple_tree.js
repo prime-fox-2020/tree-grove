@@ -1,10 +1,8 @@
 const FruitTree = require('./fruit_tree')
-const Apple = require('../fruits/apple.js')
-
-class AppleTree extends FruitTree{
-    constructor (name, age, height, fruits, healthStatus, harvested ,  limitHeight) {
-      super(new Apple, age, height, fruits, healthStatus, harvested ,  limitHeight)
-    }
+class AppleTree extends FruitTree {
+  constructor(age, height, matureAge, healtyStatus) {
+      super('Apple Tree', age, height, matureAge, healtyStatus )
+  }
 }
 
 module.exports = AppleTree
