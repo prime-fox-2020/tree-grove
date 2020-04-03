@@ -28,6 +28,7 @@ class TreeGrove {
             tree.grow();
             tree.produceFruits();
             tree.harvest();
+            console.log(`${tree.fruitClass.name} Tree | age: ${tree.age} years | Height = ${tree.height} | Fruits harvested = ${tree.harvested}`);
         } 
     }
 
@@ -71,13 +72,15 @@ var grove = new TreeGrove();
 // // pamareter ke-3: tinggi pohon pertama kali ketika ditanam di taman tersebut
 // // parameter ke-4: umur mature pohon tersebut
 // // parameter ke-5: healthStatus dari pohon tersebut ketika ditanam
-grove.inputTree("MangoTree", 3, 1.8, 7, true, 5);
-grove.inputTree("MangoTree", 5, 2.4, 12, true);
-grove.inputTree("AppleTree", 4, 1.2, 25, true, 15);
-grove.inputTree("PearTree", 7, 2, 15, true, 4);
+// // parameter ke-6: special attribute dari masing-masing pohon.
+grove.inputTree("MangoTree", 3, 1.8, 7, true);
+grove.inputTree("MangoTree", 5, 2.4, 12, true, 10);
+grove.inputTree("AppleTree", 4, 1.2, 5, true);
+grove.inputTree("PearTree", 7, 2, 15, true);
 
 // next year
-for (let j = 0; j < 20; j++) {
+for (let j = 0; j < 10; j++) {
+    console.log(`\n---------------- Year ${j+1} Report -----------------`);
     grove.nextYear();
 }
 
