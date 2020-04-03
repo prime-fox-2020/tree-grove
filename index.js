@@ -65,6 +65,7 @@ grove.inputTree("PearTree", 17, 60, 15, true)
 grove.nextYear()
 
 // // show trees ages
+console.log('----------------- Welcome to Tree Grove -----------------')
 grove.showAges()
 
 // // show trees

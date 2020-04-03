@@ -1,6 +1,6 @@
-class MangoTree{
-    constructor(age, height, matureAge, healtyStatus) {
-        this._name = 'Mango Tree'
+class FruitTree{
+    constructor(name, age, height, matureAge, healtyStatus) {
+        this._name = name
         this._age = age
         this._height = height
         this._matureAge = matureAge
@@ -31,6 +31,11 @@ class MangoTree{
             this._height += changeHeight
             this._height = Number(this._height.toFixed(2))
         }
+    }
+}
+class MangoTree extends FruitTree{
+    constructor(age, height, matureAge, healtyStatus){
+        super('Mango Tree', age, height, matureAge, healtyStatus )
     }
 }
 
