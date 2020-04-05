@@ -1,4 +1,5 @@
 const FruitTree = require('./fruit_tree');
+const Apple = require('./apple');
 
 class AppleTree extends FruitTree {
   constructor(matureAge = 5, age = 0, height = 0, healthStatus = true, maxAge = 15, growthRate = 80, stopGrowingAge = 10, baseFruitsPerYear = 15) {

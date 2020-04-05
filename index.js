@@ -3,35 +3,6 @@ const MangoTree = require('./mango_tree.js');
 const AppleTree = require('./apple_tree.js');
 const PearTree = require('./pear_tree.js');
 
-class Fruit {
-  // Produce a mango
-  constructor(grade) {
-    // 20 persen buah diprediksi qualitas buruk
-    this._grade = grade;
-  }
-
-  get grade() {
-    return this._grade;
-  }
-}
-class Mango extends Fruit {
-  constructor(grade) {
-    super(grade);
-    this.name = 'Mango';
-  }
-}
-class Apple extends Fruit {
-  constructor(grade) {
-    super(grade);
-    this.name = 'Apple';
-  }
-}
-class Pear extends Fruit {
-  constructor(grade) {
-    super(grade);
-    this.name = 'Pear';
-  }
-}
 class TreeGrove {
   constructor() {
     this._treeList = [];
@@ -40,48 +11,68 @@ class TreeGrove {
   get treeList() {
     return this._treeList;
   }
-
+  static advance (treeGroveName, nYears) {
+    for (let i = 0; i < nYears; i++) {
+      setTimeout(() => treeGroveName.nextYear(), 2000);
+      // setTimeout(treeGroveName.nextYear.bind(treeGroveName), 2000);
+      // treeGroveName.nextYear();
+    }
+  }
   inputTree(type, age, height, matureAge, healthStatus) {
+    let tree;
     switch (type) {
       case 'MangoTree':
-        this._treeList.push(new MangoTree(matureAge, age, height, healthStatus));
+        tree = new MangoTree(matureAge, age, height, healthStatus);
         break;
       case 'AppleTree':
-        this._treeList.push(new AppleTree(matureAge, age, height, healthStatus));
+        tree = new AppleTree(matureAge, age, height, healthStatus);
         break;
       case 'PearTree':
-        this._treeList.push(new PearTree(matureAge, age, height, healthStatus));
+        tree = new PearTree(matureAge, age, height, healthStatus);
         break;
     }
+    if (tree) this._treeList.push(tree);
+    return tree;
   }
   showAges() {
     this.treeList.forEach(el => {
       console.log(`${el.name} | age: ${el.age} years`);
     });
+    console.log('\n');
   }
   showTrees() {
+    console.log('----------------- All Trees-----------------\n');
     this.treeList.forEach(el => {
       console.log(`${el.name} | height: ${(el.height / 100).toFixed(1)} | age: ${el.age} | mature age: ${el.matureAge}  | health status: ${el.healthStatus}`);
     });
+    console.log('\n');
   }
   showMatureTrees() {
+    console.log('----------------- Mature Trees-----------------\n');
     this.treeList.forEach(el => {
       if (el.healthStatus && el.isMature) {
         console.log(`${el.name} | height: ${(el.height / 100).toFixed(1)} | age: ${el.age} | mature age: ${el.matureAge}  | health status: ${el.healthStatus}`);
       }
-    });    
+    });
+    console.log('\n');
   } 
   showDeadTrees() {
+    console.log('----------------- Dead Trees-----------------\n');
     this.treeList.forEach(el => {
       if (!el.healthStatus) {
         console.log(`${el.name} | height: ${(el.height / 100).toFixed(1)} | age: ${el.age} | mature age: ${el.matureAge}  | health status: ${el.healthStatus}`);
       }
     });
+    console.log('\n');
   }
   nextYear() {
+    debugger
     this.treeList.forEach(el => {
       el.grow();
     });
+    this.showTrees();
+    this.showMatureTrees();
+    this.showDeadTrees();
   }
 }
 
@@ -92,28 +83,29 @@ grove.inputTree("AppleTree", 14, 6.2, 5, true)
 grove.inputTree("PearTree", 7, 2, 15, true)
 
 // // next year
-grove.nextYear()
+TreeGrove.advance(grove, 10);
 // grove.nextYear()
 // grove.nextYear()
 // grove.nextYear()
-grove.nextYear()
-grove.nextYear()
-grove.nextYear()
-grove.nextYear()
-grove.nextYear()
-grove.nextYear()
+// grove.nextYear()
+// grove.nextYear()
+// grove.nextYear()
+// grove.nextYear()
+// grove.nextYear()
+// grove.nextYear()
+// grove.nextYear()
 
-// // show trees ages
-grove.showAges()
-// // show trees
-console.log('----------------- All Trees-----------------');
-grove.showTrees()
+// // // show trees ages
+// grove.showAges()
+// // // show trees
+// console.log('----------------- All Trees-----------------');
+// grove.showTrees()
 
 
-// // show trees
-console.log('----------------- Mature Trees-----------------');
-grove.showMatureTrees()
+// // // show trees
+// console.log('----------------- Mature Trees-----------------');
+// grove.showMatureTrees()
 
-// // show dead trees
-console.log('----------------- Dead Trees-----------------');
-grove.showDeadTrees()
+// // // show dead trees
+// console.log('----------------- Dead Trees-----------------');
+// grove.showDeadTrees()
