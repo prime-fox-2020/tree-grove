@@ -10,18 +10,13 @@ class PearTree extends FruitTree{
 	// Get current states here
 
 	// Grow the tree
-	grow() {
-		super.grow();
-	}
-
-	// Produce some mangoes
-	produceApples() {
-		super.produceFruits();
-	}
-
-	// Get some fruits
-	harvest() {
-		super.harvest();
+	produceFruits() {
+		if (this._cek === true) {
+			let acak = Math.round(Math.random() * 16);
+			for (var i = 0; i < acak; i++) {
+				this._fruits.push(new Pear());
+			}
+		}
 	}
 }
 

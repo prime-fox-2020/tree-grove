@@ -51,8 +51,10 @@ class TreeGrove {
 		console.log(`----------------- Mature Trees -----------------`);
 		let str = '';
 		for (var i = 0; i < this.array.length; i++) {
-			str += `${this.array[i].constructor.name} | height: ${this.array[i].height} | age: ${this.array[i]
-				.age} | mature age: ${this.array[i].matureAge} | health status: ${this.array[i].healthStatus}.\n`;
+			if (this.array[i]._matureAge <= this.array[i]._age && this.array[i]._healthStatus === true) {
+				str += `${this.array[i].constructor.name} | height: ${this.array[i].height} | age: ${this.array[i]
+					.age} | mature age: ${this.array[i].matureAge} | health status: ${this.array[i].healthStatus}.\n`;
+			}
 		}
 		console.log(str);
 	}
@@ -60,7 +62,7 @@ class TreeGrove {
 		console.log(`----------------- Dead Trees -----------------`);
 		let str = '';
 		for (var i = 0; i < this.array.length; i++) {
-			if (this.array[i].healthStatus === false) {
+			if (this.array[i]._healthStatus === false) {
 				str += `${this.array[i].constructor.name} | height: ${this.array[i].height} | age: ${this.array[i]
 					.matureAge} | health status : ${this.array[i].healthStatus}.\n`;
 			}
@@ -83,6 +85,10 @@ grove.inputTree('AppleTree', 4, 1.2, 5, true);
 grove.inputTree('PearTree', 7, 2, 15, true);
 
 // next year
+grove.nextYear();
+grove.nextYear();
+grove.nextYear();
+grove.nextYear();
 grove.nextYear();
 
 // show trees ages

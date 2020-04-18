@@ -6,20 +6,16 @@ class MangoTree extends FruitTree {
 	constructor(age, height, matureAge, healthStatus) {
 		super(age, height, matureAge, healthStatus);
 	}
-
-	grow() {
-		super.grow();
+	
+	produceFruits() {
+		if (this._cek === true) {
+			let acak = Math.round(Math.random() * 16);
+			for (var i = 0; i < acak; i++) {
+				this._fruits.push(new Mango());
+			}
+		}
 	}
-
-	// Produce some mangoes
-	produceMangoes() {
-		super.produceFruits();
-	}
-
-	// Get some fruits
-	harvest() {
-		super.harvest();
-	}
+	
 }
 
 module.exports = MangoTree;

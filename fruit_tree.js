@@ -65,7 +65,10 @@ class FruitTree {
 		//Tentukan Mature Age
 		//Tentukan kapan tidak tumbuh lagi
 		//Tentukan kapan tidak berbuah lagi
-		this.age++;
+		if(this._healthStatus !== false){
+			this.age++;
+		}
+	
 		this._fruits = [];
 		if (this.age < this._stopGrowing) {
 			this.height++;
